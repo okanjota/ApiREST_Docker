@@ -17,8 +17,10 @@ public class ClienteController {
     private List<Cliente> clientes = new ArrayList<>();
 
     public ClienteController() {
-        clientes.add(new Cliente("Leonardo DIas", "11999999999", "leonardo@email.com"));
-        clientes.add(new Cliente("Amara HOffmann", "11888888888", "amara@email.com"));
+        clientes.add(new Cliente("Leonardo Dias", "27 420956489", "leonardo@email.com"));
+        clientes.add(new Cliente("Amara HOffmann", "11 428429842", "amara@email.com"));
+        clientes.add(new Cliente("Armando Ferrari", "27 669334200", "armando@gmail.com"));
+        clientes.add(new Cliente("Juscelino Kubtschek", "11 489842948", "Juscelino@gmail.com"));
     }
 
     @GetMapping
