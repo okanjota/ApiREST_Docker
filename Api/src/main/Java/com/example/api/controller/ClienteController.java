@@ -21,13 +21,11 @@ public class ClienteController {
         clientes.add(new Cliente(8924L, "Juscelino Kubitschek", "11 489842948", "juscelino@gmail.com"));
     }
 
-    // READ - Listar todos os clientes
     @GetMapping
     public List<Cliente> listar() {
         return clientes;
     }
 
-    // CREATE - Criar novo cliente
     @PostMapping
     public Cliente criar(@RequestBody Cliente cliente) {
         cliente.setId(contadorId.getAndIncrement());
@@ -35,7 +33,6 @@ public class ClienteController {
         return cliente;
     }
 
-    // UPDATE - Atualizar cliente por ID
     @PutMapping("/{id}")
     public Cliente atualizar(@PathVariable Long id, @RequestBody Cliente clienteAtualizado) {
         for (Cliente cliente : clientes) {
@@ -49,7 +46,6 @@ public class ClienteController {
         throw new RuntimeException("Cliente não encontrado com id: " + id);
     }
 
-    // DELETE - Remover cliente por ID
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
         boolean removido = clientes.removeIf(cliente -> cliente.getId().equals(id));
